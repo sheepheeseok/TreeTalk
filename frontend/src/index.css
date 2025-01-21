@@ -34,6 +34,39 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+/* PC (1280px ~ 1920px) */
+@media (min-width: 1280px) and (max-width: 1920px) {
+  .container {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* 노트북 (767px ~ 1280px) */
+@media (max-width: 1280px) and (min-width: 767px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    padding: 0.3rem;
+  }
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -68,5 +101,15 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    flex-direction: column;
+  }
+  .main {
+    display: flex;
+    justify-content: space-between;
   }
 }
